@@ -10,10 +10,9 @@ using System.Windows.Forms;
 
 namespace Cinema
 {
-    public partial class MainForm : Form
-    {
-        public MainForm()
-        {
+    public partial class MainForm : Form {
+        User a = User.GetInstance();
+        public MainForm() {
             InitializeComponent();
         }
     }
