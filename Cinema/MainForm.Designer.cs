@@ -31,35 +31,51 @@ namespace Cinema
         {
             this.m_sign_in_button = new System.Windows.Forms.Button();
             this.m_sign_up_button = new System.Windows.Forms.Button();
+            this.m_user_log = new System.Windows.Forms.FlowLayoutPanel();
+            this.m_user_log.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_sign_in_button
             // 
-            this.m_sign_in_button.Location = new System.Drawing.Point(632, 12);
+            this.m_sign_in_button.Location = new System.Drawing.Point(3, 3);
             this.m_sign_in_button.Name = "m_sign_in_button";
             this.m_sign_in_button.Size = new System.Drawing.Size(75, 23);
             this.m_sign_in_button.TabIndex = 0;
             this.m_sign_in_button.Text = "Sign in";
             this.m_sign_in_button.UseVisualStyleBackColor = true;
+            this.m_sign_in_button.Click += new System.EventHandler(this.OnSignInButtonClick);
             // 
             // m_sign_up_button
             // 
-            this.m_sign_up_button.Location = new System.Drawing.Point(713, 12);
+            this.m_sign_up_button.Location = new System.Drawing.Point(84, 3);
             this.m_sign_up_button.Name = "m_sign_up_button";
             this.m_sign_up_button.Size = new System.Drawing.Size(75, 23);
             this.m_sign_up_button.TabIndex = 1;
             this.m_sign_up_button.Text = "Sign up";
             this.m_sign_up_button.UseVisualStyleBackColor = true;
+            this.m_sign_up_button.Click += new System.EventHandler(this.OnSignUpButtonClick);
+            // 
+            // m_user_log
+            // 
+            this.m_user_log.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_user_log.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_user_log.Controls.Add(this.m_sign_in_button);
+            this.m_user_log.Controls.Add(this.m_sign_up_button);
+            this.m_user_log.Location = new System.Drawing.Point(624, 12);
+            this.m_user_log.Name = "m_user_log";
+            this.m_user_log.Size = new System.Drawing.Size(164, 31);
+            this.m_user_log.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.m_sign_up_button);
-            this.Controls.Add(this.m_sign_in_button);
+            this.Controls.Add(this.m_user_log);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "Cinemas";
+            this.m_user_log.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -68,6 +84,7 @@ namespace Cinema
 
         private System.Windows.Forms.Button m_sign_in_button;
         private System.Windows.Forms.Button m_sign_up_button;
+        private System.Windows.Forms.FlowLayoutPanel m_user_log;
     }
 }
 

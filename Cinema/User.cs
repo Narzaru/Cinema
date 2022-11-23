@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cinema
-{
+﻿namespace Cinema {
     public class User {
         public static User GetInstance() {
             if (m_instance is null) {
@@ -14,20 +7,14 @@ namespace Cinema
             return m_instance;
         }
 
-
-        public static bool IsLoggedIn() {
-            return m_user_id != -1 ? true : false;
-        }
-        
-
-        public int UserId {
-            get { return m_user_id; }
-            set { m_user_id = value; }
+        public bool IsLoggedIn() {
+            return Data is null;
         }
 
-        private User() { m_user_id = -1; }
+        public UserData Data { get; set; }
 
-        private static User m_instance;
-        private static int m_user_id;
+        private User() { Data = null; }
+
+        private static User m_instance = null;
     }
 }
